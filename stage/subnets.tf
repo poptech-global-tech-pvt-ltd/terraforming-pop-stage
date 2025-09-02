@@ -64,6 +64,7 @@ resource "aws_subnet" "SubnetPublicAPSOUTH1B" {
   }
   vpc_id = "vpc-0f63840cd962173c5"
 }
+#test
 
 resource "aws_subnet" "SubnetPrivateAPSOUTH1A" {
   assign_ipv6_address_on_creation                = false
