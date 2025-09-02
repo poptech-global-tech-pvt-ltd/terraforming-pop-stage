@@ -1,24 +1,22 @@
 import {
-  to = aws_subnet.SubnetPrivateAPSOUTH1B
-  id = "subnet-0e1b4d92c477697aa"
+  to = aws_route_table.PublicRouteTableStageCluster
+  id = "rtb-055e88dc8f3112158"
 }
 
 import {
-  to = aws_subnet.SubnetPublicAPSOUTH1B
-  id = "subnet-03102625621ec9e72"
+  to = aws_route_table.PrivateRouteTableAPSOUTH1B
+  id = "rtb-059d256e9702e57b5"
 }
 
 import {
-  to = aws_subnet.SubnetPrivateAPSOUTH1A
-  id = "subnet-04a939c0eab88cf17"
+  to = aws_route_table.rtb-0b7665fd18f84dd0f
+  id = "rtb-0b7665fd18f84dd0f"
 }
 
 import {
-  to = aws_subnet.SubnetPublicAPSOUTH1A
-  id = "subnet-0412aaae2878b5587"
+  to = aws_route_table.PrivateRouteTableAPSOUTH1A
+  id = "rtb-0025b4b8deb2f63cb"
 }
-
-
 
 
 
