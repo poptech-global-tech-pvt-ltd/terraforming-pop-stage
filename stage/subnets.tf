@@ -232,3 +232,4 @@ resource "aws_subnet" "testing-subnet-creation" {
   }
   vpc_id = "vpc-0f63840cd962173c5"
 }
+
