@@ -199,7 +199,7 @@ resource "aws_subnet" "testing-subnet-creation" {
   }
   vpc_id = "vpc-0f63840cd962173c5"
 }
-resource "aws_subnet" "testing-subnet-creation" {
+resource "aws_subnet" "testing-subnet-creation-2" {
   assign_ipv6_address_on_creation                = false
   availability_zone                              = "ap-south-1a"
   cidr_block                                     = "192.168.0.0/19"
