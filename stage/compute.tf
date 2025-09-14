@@ -11,7 +11,7 @@ module "ec2_instance" {
     team="devops"
   }
 }
-module "ec2_instance" {
+module "ec2_instance_2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
   name = "actions-runner-stage-2"
