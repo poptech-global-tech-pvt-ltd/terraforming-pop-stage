@@ -1,6 +1,6 @@
 module "ec2_instance_2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
-
+  ami = "ami-0f2e255ec956ade7f"
   name = "actions-runner-stage-2"
   key_name = "actions-runner-key"
   instance_type = "t3.micro"
