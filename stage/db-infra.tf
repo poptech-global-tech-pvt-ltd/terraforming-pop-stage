@@ -67,10 +67,10 @@ resource "aws_db_instance" "payments_db" {
   storage_throughput                    = 0
   storage_type                          = "gp2"
   tags = {
-    team = "pokharan"
+    team = "payment"
   }
   tags_all = {
-    team = "pokharan"
+    team = "payment"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -223,8 +223,12 @@ resource "aws_db_instance" "return" {
   storage_encrypted                     = true
   storage_throughput                    = 0
   storage_type                          = "io2"
-  tags                                  = {}
-  tags_all                              = {}
+  tags                                  = {
+    team = "shop"
+  }
+  tags_all                              = {
+    team = "shop"
+  }
   timezone                              = null
   upgrade_storage_config                = null
   username                              = "postgres"
@@ -233,7 +237,7 @@ resource "aws_db_instance" "return" {
 
 # __generated__ by Terraform
 resource "aws_db_instance" "popcoinsloyalty" {
-  allocated_storage                     = 400
+  allocated_storage                     = 500
   allow_major_version_upgrade           = null
   apply_immediately                     = null
   auto_minor_version_upgrade            = true
@@ -265,8 +269,8 @@ resource "aws_db_instance" "popcoinsloyalty" {
   iam_database_authentication_enabled   = false
   identifier                            = "popcoinsloyalty"
   identifier_prefix                     = null
-  instance_class                        = "db.m5.8xlarge"
-  iops                                  = 3000
+  instance_class                        = "db.m5.12xlarge"
+  iops                                  = 3500
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
   maintenance_window                    = "sat:21:30-sat:22:00"
@@ -297,14 +301,14 @@ resource "aws_db_instance" "popcoinsloyalty" {
   storage_throughput                    = 0
   storage_type                          = "io1"
   tags = {
-    Name    = "Coins"
-    service = "Coins"
-    team    = "pokharan"
+    Name    = "coins"
+    service = "coins"
+    team    = "growth"
   }
   tags_all = {
-    Name    = "Coins"
-    service = "Coins"
-    team    = "pokharan"
+    Name    = "coins"
+    service = "coins"
+    team    = "growth"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -459,8 +463,14 @@ resource "aws_db_instance" "popshopifyecom" {
   storage_encrypted                     = true
   storage_throughput                    = 0
   storage_type                          = "gp2"
-  tags                                  = {}
-  tags_all                              = {}
+  tags                                  = {
+    team = "growth"
+    service = "shopify"
+  }
+  tags_all                              = {
+    team = "growth"
+    service = "shopify"
+  }
   timezone                              = null
   upgrade_storage_config                = null
   username                              = "postgres"
@@ -534,11 +544,13 @@ resource "aws_db_instance" "hashira_prod" {
   storage_type                          = "gp3"
   tags = {
     devops-guru-default = "hashira-prod"
-    team                = "pokharan"
+    team                = "shop"
+    service             = "hashira"
   }
   tags_all = {
     devops-guru-default = "hashira-prod"
-    team                = "pokharan"
+    team                = "shop"
+    service             = "hashira"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -614,10 +626,12 @@ resource "aws_db_instance" "rcbp" {
   tags = {
     "created by" = "Arun"
     team         = "rcbp"
+    service      = "rcbp"
   }
   tags_all = {
     "created by" = "Arun"
     team         = "rcbp"
+    service      = "rcbp"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -631,7 +645,7 @@ resource "aws_db_instance" "popbe_read" {
   allow_major_version_upgrade           = null
   apply_immediately                     = null
   auto_minor_version_upgrade            = true
-  availability_zone                     = "ap-south-1b"
+  availability_zone                     = "ap-south-1a"
   backup_retention_period               = 0
   backup_target                         = "region"
   backup_window                         = "21:12-21:42"
@@ -659,7 +673,7 @@ resource "aws_db_instance" "popbe_read" {
   iam_database_authentication_enabled   = false
   identifier                            = "popbe-read"
   identifier_prefix                     = null
-  instance_class                        = "db.m6g.2xlarge"
+  instance_class                        = "db.m6g.4xlarge"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
@@ -770,10 +784,12 @@ resource "aws_db_instance" "payments_read_replica" {
   storage_throughput                    = 0
   storage_type                          = "io2"
   tags = {
-    team = "pokharan"
+    team = "payment"
+    service = "payment"
   }
   tags_all = {
-    team = "pokharan"
+    team = "payment"
+    service = "payment"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -1050,7 +1066,7 @@ resource "aws_db_instance" "nidhi_prod" {
   iam_database_authentication_enabled   = false
   identifier                            = "nidhi-prod"
   identifier_prefix                     = null
-  instance_class                        = "db.t4g.large"
+  instance_class                        = "db.t4g.2xlarge"
   iops                                  = 3000
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
@@ -1082,10 +1098,12 @@ resource "aws_db_instance" "nidhi_prod" {
   storage_throughput                    = 125
   storage_type                          = "gp3"
   tags = {
-    team = "pokharan"
+    team = "growth"
+    service = "nidhi"
   }
   tags_all = {
-    team = "pokharan"
+    team = "growth"
+    service = "nidhi"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -1207,7 +1225,7 @@ resource "aws_db_instance" "read2_app" {
   iam_database_authentication_enabled   = false
   identifier                            = "read2-app"
   identifier_prefix                     = null
-  instance_class                        = "db.m6g.2xlarge"
+  instance_class                        = "db.m6g.4xlarge"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
@@ -1319,10 +1337,12 @@ resource "aws_db_instance" "payments" {
   storage_throughput                    = 0
   storage_type                          = "io2"
   tags = {
-    team = "pokharan"
+    team = "payment"
+    service = "payment"
   }
   tags_all = {
-    team = "pokharan"
+    team = "payment"
+    service = "payment"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -1631,13 +1651,13 @@ resource "aws_db_instance" "db_read_popcard_prod" {
   storage_throughput                    = 125
   storage_type                          = "gp3"
   tags = {
-    Name    = "shopify"
-    service = "shopify"
+    Name    = "card"
+    service = "card"
     team    = "card"
   }
   tags_all = {
-    Name    = "shopify"
-    service = "shopify"
+    Name    = "card"
+    service = "card"
     team    = "card"
   }
   timezone               = null
@@ -1876,13 +1896,13 @@ resource "aws_db_instance" "popnotifications" {
     Name                = "Notifications"
     devops-guru-default = "popnotifications"
     service             = "Utility"
-    team                = "arun"
+    team                = "growth"
   }
   tags_all = {
     Name                = "Notifications"
     devops-guru-default = "popnotifications"
     service             = "Utility"
-    team                = "arun"
+    team                = "growth"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -1896,7 +1916,7 @@ resource "aws_db_instance" "popbe_targeting" {
   allow_major_version_upgrade           = null
   apply_immediately                     = null
   auto_minor_version_upgrade            = true
-  availability_zone                     = "ap-south-1a"
+  availability_zone                     = "ap-south-1c"
   backup_retention_period               = 0
   backup_target                         = "region"
   backup_window                         = "21:12-21:42"
@@ -1924,8 +1944,8 @@ resource "aws_db_instance" "popbe_targeting" {
   iam_database_authentication_enabled   = false
   identifier                            = "popbe-targeting"
   identifier_prefix                     = null
-  instance_class                        = "db.m5.4xlarge"
-  iops                                  = 3000
+  instance_class                        = "db.m5.8xlarge"
+  iops                                  = 3024
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
   maintenance_window                    = "sat:22:30-sat:23:00"
@@ -1950,6 +1970,7 @@ resource "aws_db_instance" "popbe_targeting" {
   region                                = "ap-south-1"
   replica_mode                          = null
   replicate_source_db                   = "arn:aws:rds:ap-south-1:835518098452:db:popbe"
+  # replicate_source_db                   = "popbe"
   skip_final_snapshot                   = true
   snapshot_identifier                   = null
   storage_encrypted                     = true
@@ -1957,9 +1978,11 @@ resource "aws_db_instance" "popbe_targeting" {
   storage_type                          = "io1"
   tags = {
     team = "shop"
+    service = "shop"
   }
   tags_all = {
     team = "shop"
+    service = "shop"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -2431,10 +2454,10 @@ resource "aws_db_instance" "metabase" {
   storage_throughput                    = 0
   storage_type                          = "io2"
   tags = {
-    team = "data"
+    team = "data-platform"
   }
   tags_all = {
-    team = "data"
+    team = "data-platform"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -2660,10 +2683,12 @@ resource "aws_db_instance" "cassa" {
   storage_throughput                    = 0
   storage_type                          = "io2"
   tags = {
-    team = "pokharan"
+    team = "payment"
+    service = "cassa"
   }
   tags_all = {
-    team = "pokharan"
+    team = "payment"
+    service = "cassa"
   }
   timezone               = null
   upgrade_storage_config = null
@@ -2782,8 +2807,8 @@ resource "aws_db_instance" "popbe" {
   iam_database_authentication_enabled   = false
   identifier                            = "popbe"
   identifier_prefix                     = null
-  instance_class                        = "db.m5.8xlarge"
-  iops                                  = 5000
+  instance_class                        = "db.m5.12xlarge"
+  iops                                  = 20000
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
   maintenance_window                    = "sat:22:30-sat:23:00"
@@ -2970,12 +2995,12 @@ resource "aws_db_instance" "brand_loyalty" {
   tags = {
     Name    = "shopify"
     service = "shopify"
-    team    = "pokharan"
+    team    = "growth"
   }
   tags_all = {
     Name    = "shopify"
     service = "shopify"
-    team    = "pokharan"
+    team    = "growth"
   }
   timezone               = null
   upgrade_storage_config = null
