@@ -2295,13 +2295,13 @@ resource "aws_db_instance" "read_3_redash" {
   storage_type                          = "gp2"
   tags = {
     Name    = "CoinsRedash"
-    service = "Coins"
-    team    = "pokharan"
+    service = "redash"
+    team    = "growth"
   }
   tags_all = {
     Name    = "CoinsRedash"
-    service = "Coins"
-    team    = "pokharan"
+    service = "redash"
+    team    = "growth"
   }
   timezone               = null
   upgrade_storage_config = null
