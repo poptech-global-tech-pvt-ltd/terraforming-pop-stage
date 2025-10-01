@@ -1225,7 +1225,7 @@ resource "aws_db_instance" "read2_app" {
   iam_database_authentication_enabled   = false
   identifier                            = "read2-app"
   identifier_prefix                     = null
-  instance_class                        = "db.m6g.4xlarge"
+  instance_class                        = "db.m5.12xlarge"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
@@ -1861,7 +1861,7 @@ resource "aws_db_instance" "popnotifications" {
   iam_database_authentication_enabled   = false
   identifier                            = "popnotifications"
   identifier_prefix                     = null
-  instance_class                        = "db.t4g.medium"
+  instance_class                        = "db.t3.2xlarge"
   iops                                  = 0
   kms_key_id                            = "arn:aws:kms:ap-south-1:835518098452:key/bff8c2ae-fe14-4a23-9f8c-1cd8227ebc88"
   license_model                         = "postgresql-license"
